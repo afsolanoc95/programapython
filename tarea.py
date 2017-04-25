@@ -1,0 +1,8 @@
+jugador1=[50,30]
+jugador2=[60,20]
+jugador3=[40,20]
+queda=[reduce(lambda a,b:a+b,map(lambda n:n-(reduce(lambda a,b: b,jugador1)), jugador1)),reduce(lambda a,b:a+b,map(lambda n:n-(reduce(lambda a,b: b,jugador2)), jugador2)),reduce(lambda a,b:a+b,map(lambda n:n-(reduce(lambda a,b: b,jugador3)), jugador3))]
+perdio=filter(lambda a: a >= reduce(lambda a,b: a if (a > b) else b, [reduce(lambda a,b:a+b,map(lambda n:n-(reduce(lambda a,b: b,jugador1)), jugador1)),reduce(lambda a,b:a+b,map(lambda n:n-(reduce(lambda a,b: b,jugador2)), jugador2)),reduce(lambda a,b:a+b,map(lambda n:n-(reduce(lambda a,b: b,jugador3)), jugador3))]), [reduce(lambda a,b:a+b,map(lambda n:n-(reduce(lambda a,b: b,jugador1)), jugador1)),reduce(lambda a,b:a+b,map(lambda n:n-(reduce(lambda a,b: b,jugador2)), jugador2)),reduce(lambda a,b:a+b,map(lambda n:n-(reduce(lambda a,b: b,jugador3)), jugador3))])
+gano=filter(lambda a: a <= reduce(lambda a,b: a if (a < b) else b, [reduce(lambda a,b:a+b,map(lambda n:n-(reduce(lambda a,b: b,jugador1)), jugador1)),reduce(lambda a,b:a+b,map(lambda n:n-(reduce(lambda a,b: b,jugador2)), jugador2)),reduce(lambda a,b:a+b,map(lambda n:n-(reduce(lambda a,b: b,jugador3)), jugador3))]), [reduce(lambda a,b:a+b,map(lambda n:n-(reduce(lambda a,b: b,jugador1)), jugador1)),reduce(lambda a,b:a+b,map(lambda n:n-(reduce(lambda a,b: b,jugador2)), jugador2)),reduce(lambda a,b:a+b,map(lambda n:n-(reduce(lambda a,b: b,jugador3)), jugador3))])
+promedio=(reduce(lambda a,b: a, map(lambda x,y,z:x+y+z,jugador1,jugador2,jugador3)))/len(queda)
+print "el jugador que mas gano gano ",gano," el que mas perdio por ",perdio," promedio de apuestas fue ",promedio
