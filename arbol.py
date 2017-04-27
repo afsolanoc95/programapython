@@ -14,7 +14,6 @@ def buscar(arbol, elemento):
 def buscar_hijos(hijos,valor):
     if hijos==[]:
         return False
-
     return buscar(hijos[0],valor) or buscar_hijos(hijos[1:],valor)
     
 def profundidad(arbol):
@@ -24,7 +23,11 @@ def profundidad(arbol):
         
 def printElement(valor):
     print valor
-a=['a','ab','ac','abel','abeta','abalia','acacia']
+
+a=[]
+n=int(input ("cantidad de elementos de la lista "))
+for k in range(n):
+    a.append(raw_input("Dame el valor ")) 
 
 arbol = Nodo_N(a[0])
 print(arbol.hijos)
@@ -46,11 +49,9 @@ def encoger(valor):
     else:
         return encoger(valor[:len(valor)-1])
    
-
-escogencia(a[6])
-escogencia(a[4])
-escogencia(a[3])
-escogencia(a[5])
-
+s=3
+for r in range(n-3): 
+    escogencia(a[s])
+    s=s+1
 profundidad(arbol)
 
