@@ -16,10 +16,10 @@ def buscar_hijos(hijos,valor):
         return False
     return buscar(hijos[0],valor) or buscar_hijos(hijos[1:],valor)
     
-def profundidad(arbol):
-    printElement(arbol.valor)
+def profundidad(arbol,funcion):
+    funcion(arbol.valor)
     for hijo in arbol.hijos:
-        profundidad (hijo)
+        profundidad (hijo,funcion)
         
 def printElement(valor):
     print valor
@@ -36,12 +36,10 @@ agregarElemento(arbol,a[2],a[0])
 
 def escogencia(valor):
     
-        
     if valor==arbol.hijos[0].valor or encoger(valor)==arbol.hijos[0].valor:
         agregarElemento(arbol,valor,a[1])
     if valor==arbol.hijos[1].valor or encoger(valor)==arbol.hijos[1].valor:
         agregarElemento(arbol,valor,a[2])
-    
     
 def encoger(valor):
     if valor==arbol.hijos[0].valor or valor==arbol.hijos[1].valor:
@@ -53,5 +51,4 @@ s=3
 for r in range(n-3): 
     escogencia(a[s])
     s=s+1
-profundidad(arbol)
-
+profundidad(arbol,printElement)
